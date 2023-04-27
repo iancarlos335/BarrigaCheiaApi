@@ -17,12 +17,12 @@ public class DonerRepository extends AbstractDAO<Doner, Long> implements DonerDA
 
     @Override
     public Doner getById(Long id) {
-        return null;
+        return findById(id);
     }
 
     @Override
-    public Doner updateEntity(Doner entity) {
-        return null;
+    public void updateEntity(Doner entity) {
+        update(entity);
     }
 
     @Override

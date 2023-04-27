@@ -11,7 +11,7 @@ public interface DonerDAO{
 
     Doner getById(Long id);
 
-    Doner updateEntity(Doner entity);
+    void updateEntity(Doner entity);
 
     void deleteEntity(Long id);
 
