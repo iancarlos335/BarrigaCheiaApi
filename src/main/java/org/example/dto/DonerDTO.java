@@ -1,7 +1,7 @@
 package org.example.dto;
 
 public class DonerDTO {
-    private Long id;
+
     private String name;
     private Float phone;
     private String email;
@@ -14,8 +14,7 @@ public class DonerDTO {
     public DonerDTO() {
     }
 
-    public DonerDTO(Long id, String name, Float phone, String email, String password, String cep, String adress, Integer cpf, String cnpj) {
-        this.id = id;
+    public DonerDTO(String name, Float phone, String email, String password, String cep, String adress, Integer cpf, String cnpj) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -24,10 +23,6 @@ public class DonerDTO {
         this.adress = adress;
         this.cpf = cpf;
         this.cnpj = cnpj;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getName() {

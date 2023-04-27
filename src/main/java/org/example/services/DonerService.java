@@ -7,15 +7,17 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class DonerService{
+public class DonerService {
 
     @Autowired
     DonerRepository repository;
 
 
+    @Transactional
     public DonerDTO salvar(DonerDTO dto) {
         Doner entity = new Doner();
         BeanUtils.copyProperties(dto, entity);
@@ -23,6 +25,7 @@ public class DonerService{
         repository.saveEntity(entity);
         return dto;
     }
+
     public List<Doner> encontrarTodos() {
         return repository.findAll();
     }
@@ -35,7 +38,7 @@ public class DonerService{
         repository.update(entity);
     }
 
-    public void deletarDoador(Long id){
+    public void deletarDoador(Long id) {
         repository.delete(id);
     }
 }
