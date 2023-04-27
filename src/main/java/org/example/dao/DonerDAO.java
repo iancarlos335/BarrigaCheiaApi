@@ -1,10 +1,19 @@
 package org.example.dao;
 
+import org.example.dto.DonerDTO;
 import org.example.entities.Doner;
 
 public interface DonerDAO{
 
-    void
+    //crud
+
+    void saveEntity(Doner entity);
+
+    Doner getById(Long id);
+
+    Doner updateEntity(Doner entity);
+
+    void deleteEntity(Long id);
 
 
 }
