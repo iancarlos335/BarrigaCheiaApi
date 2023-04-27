@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
+
 public abstract class AbstractDAO<T, PK extends Serializable> {
     @SuppressWarnings("unchecked")
     private final Class<T> entityClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];

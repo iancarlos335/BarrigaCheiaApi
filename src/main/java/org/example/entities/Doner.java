@@ -1,6 +1,14 @@
 package org.example.entities;
 
+import javax.persistence.*;
+import java.util.Objects;
+
+@Entity
 public class Doner {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private Float phone;
     private String email;
@@ -11,6 +19,14 @@ public class Doner {
     private String cnpj;
 
     public Doner() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -75,5 +91,18 @@ public class Doner {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Doner doner = (Doner) o;
+        return Objects.equals(id, doner.id) && Objects.equals(name, doner.name) && Objects.equals(phone, doner.phone) && Objects.equals(email, doner.email) && Objects.equals(password, doner.password) && Objects.equals(cep, doner.cep) && Objects.equals(adress, doner.adress) && Objects.equals(cpf, doner.cpf) && Objects.equals(cnpj, doner.cnpj);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, phone, email, password, cep, adress, cpf, cnpj);
     }
 }

@@ -3,9 +3,11 @@ package org.example.repositories;
 import org.example.dao.AbstractDAO;
 import org.example.dao.DonerDAO;
 import org.example.entities.Doner;
+import org.springframework.stereotype.Repository;
 
-public class DonerRepository extends AbstractDAO<DonerDAO, Integer> implements DonerDAO {
+@Repository
+public class DonerRepository extends AbstractDAO<Doner, Long> implements DonerDAO {
 
-    Doner findById
+    Doner
 
 }
